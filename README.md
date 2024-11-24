@@ -9,3 +9,9 @@ Checkpoints:
 - [ ] Open files
 - [ ] Find files with a browser (No internet)
 - [ ] Qt 6 translation
+
+Build:
+
+"mkdir build && cd build"
+"cmake .."
+"make"
