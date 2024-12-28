@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include <QApplication>
 #include <QHeaderView>
+#include <QVBoxLayout>
+#include <QDir>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), treeView(new QTreeView(this)), fileSystemModel(new QFileSystemModel(this)), 
@@ -13,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
     // Configurar la vista de árbol
     treeView->setModel(fileSystemModel);
     treeView->setRootIndex(fileSystemModel->index(QDir::rootPath()));
-    treeView->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    treeView->header()->setSectionResizeMode(0, QHeaderView::ResizeToContents); // Cambiado para Qt6
 
     // Conectar señales
     connect(treeView, &QTreeView::clicked, this, [this](const QModelIndex &index) {
@@ -31,7 +33,7 @@ MainWindow::MainWindow(QWidget *parent)
     setCentralWidget(centralWidget);
 
     // Título de la ventana
-    setWindowTitle("Simple File Manager");
+    setWindowTitle("QtFM - Simple File Manager");
 }
 
 // Definición del destructor

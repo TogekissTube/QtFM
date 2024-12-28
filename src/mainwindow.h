@@ -12,10 +12,18 @@ class MainWindow : public QMainWindow {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow(); // Declaración del destructor
+    // Constructor
+    explicit MainWindow(QWidget *parent = nullptr);
+    
+    // Destructor
+    ~MainWindow();
+
+private slots:
+    // Slot para manejar la acción de refrescar la vista de archivos
+    void onRefreshButtonClicked();
 
 private:
+    // Miembros para la vista de árbol de archivos, el modelo de sistema de archivos y los controles
     QTreeView *treeView;
     QFileSystemModel *fileSystemModel;
     QLineEdit *pathLineEdit;
