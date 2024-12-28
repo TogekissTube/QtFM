@@ -1,5 +1,5 @@
 # QtFM
-Qt 5 file manager, Soon to Qt 6!
+Qt 6 file manager with tree view
 
 Checkpoints:
 
